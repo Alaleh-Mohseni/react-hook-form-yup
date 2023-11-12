@@ -17,7 +17,7 @@ Currently, two official plugins are available:
 - Yup
 - Framer motion
 - React chart
-- React hot toasty
+- React hot toast
 
 ## Preview
 
