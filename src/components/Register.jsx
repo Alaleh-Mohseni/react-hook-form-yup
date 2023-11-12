@@ -35,7 +35,7 @@ function Register() {
     return (
         <>
             <Toaster position="top-right" reverseOrder={false} />
-            <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+            <h1 className="text-xl text-center font-bold leading-tight tracking-tight md:text-2xl">
                 Create an account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -74,17 +74,17 @@ function Register() {
                 />
                 <div className="flex items-start">
                     <div className="flex items-center h-5">
-                        <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300" />
+                        <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-600 rounded bg-gray-700 focus:ring-3 focus:ring-indigo-400" />
                     </div>
                     <div className="ml-3 text-sm">
-                        <label htmlFor="terms" className="font-light text-gray-500">
+                        <label htmlFor="terms" className="font-light text-gray-400">
                             I accept the {" "}
                             <Links text={'Terms and Conditions'} />
                         </label>
                     </div>
                 </div>
                 <Button text={'Sign up'} />
-                <p className="text-sm font-light text-gray-500">
+                <p className="text-sm font-light text-gray-400">
                     Already have an account? {" "}
                     <Links href={'/'} text={'Login here'} />
                 </p>

@@ -41,7 +41,7 @@ function Login() {
     return (
         <>
             <Toaster position="top-right" reverseOrder={false} />
-            <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+            <h1 className="text-xl text-center font-bold leading-tight tracking-tight md:text-2xl">
                 Login to your account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -73,9 +73,9 @@ function Login() {
                             id="remember-me"
                             name="remember-me"
                             type="checkbox"
-                            className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                            className="h-4 w-4 bg-gray-700 text-purple-600 focus:ring-purple-500 border-gray-600 rounded ring-offset-gray-800"
                         />
-                        <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
+                        <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-400">
                             Remember me
                         </label>
                     </div>
@@ -84,7 +84,7 @@ function Login() {
                     </div>
                 </div>
                 <Button text={'Login'} />
-                <p className="text-sm font-light text-gray-500">
+                <p className="text-sm font-light text-gray-400">
                     Don't have an account? {" "}
                     <Links text={'Create one'} href={'/register'} />
                 </p>
