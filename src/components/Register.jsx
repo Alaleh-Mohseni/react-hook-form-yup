@@ -24,7 +24,6 @@ function Register() {
             toast.success("User registered successfully")
             console.log("user registered");
         } catch (error) {
-            console.log(error.message)
             if (error.code === "auth/email-already-in-use") {
                 toast.error('Email already in use')
             }
@@ -74,7 +73,12 @@ function Register() {
                 />
                 <div className="flex items-start">
                     <div className="flex items-center h-5">
-                        <input id="terms" aria-describedby="terms" type="checkbox" className="w-4 h-4 border border-gray-600 rounded bg-gray-700 focus:ring-3 focus:ring-indigo-400" />
+                        <input
+                            id="terms"
+                            aria-describedby="terms"
+                            type="checkbox"
+                            className="w-4 h-4 border border-gray-600 rounded bg-gray-700 focus:ring-3 focus:ring-indigo-400"
+                        />
                     </div>
                     <div className="ml-3 text-sm">
                         <label htmlFor="terms" className="font-light text-gray-400">

@@ -1,0 +1,11 @@
+export const API = '/api/v3';
+export const COINS = `${API}/coins`;
+export const SEARCH = `${API}/search`;
+export const MARKETS = `${COINS}/markets`;
+export const CURRENCY = `?vs_currency`;
+export const IDS = `&ids`;
+export const ORDER = `&order`;
+export const PAGE = `&page`;
+export const PER_PAGE = `&per_page`;
+export const DAY = `&days`;
+export const INTERVAL = `&interval`;

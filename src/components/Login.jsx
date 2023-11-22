@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../schemas";
 import { AuthContext } from "../contexts/auth-provider";
 import { auth } from "../config/firebase";
+import { useRedirectActiveUser } from "../hooks/useRedirectActiveUser";
 import FormGroup from "./FormGroup";
 import Links from "./Links";
 import Button from "./Button";
@@ -15,15 +15,8 @@ function Login() {
     const { login } = useContext(AuthContext)
     const resolver = yupResolver(loginSchema)
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver })
-    const navigate = useNavigate()
-    const user = auth.currentUser
 
-
-    useEffect(() => {
-        if (user) {
-            return navigate('/dashboard')
-        }
-    }, [user])
+    useRedirectActiveUser(auth.currentUser, "/dashboard")
 
 
     const onSubmit = async (data) => {
@@ -31,8 +24,6 @@ function Login() {
             await login(auth, data?.email, data?.password)
             console.log("user logged in")
         } catch (error) {
-            console.log(error.message)
-            console.log(error.code)
             toast.error('Invalid login credentials')
         }
     }

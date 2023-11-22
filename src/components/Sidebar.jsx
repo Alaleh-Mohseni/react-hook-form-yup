@@ -53,9 +53,11 @@ function Sidebar({currentUser, handleLogout}) {
             ${isExpanded ? 'px-9' : 'px-3'}
             `}
         >
-            <div className="logo flex space-x-3 items-center">
+            <div className="logo flex flex-col space-y-3 items-center">
                 <img src={avatar} className='h-10 w-10 rounded-full ring-2 ring-white' />
-                <span className={isExpanded ? 'block' : 'hidden'}>{currentUser?.email}</span>
+                <span className={`${isExpanded ? 'block' : 'hidden'} text-sm text-ellipsis overflow-hidden`}>
+                    {currentUser?.email}
+                </span>
             </div>
 
             <div
