@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { registrationSchema } from "../schemas";
-import { AuthContext } from "../contexts/auth-provider";
-import { auth } from "../config/firebase";
+import { registrationSchema } from "@schemas/schemas";
+import { AuthContext } from "@contexts/auth-provider";
+import { auth } from "@config/firebase";
 import { Toaster, toast } from "react-hot-toast";
-import { useRedirectActiveUser } from "../hooks/useRedirectActiveUser";
+import { useRedirectActiveUser } from "@hooks/useRedirectActiveUser";
 import FormGroup from "./FormGroup";
 import Links from "./Links";
 import Button from "./Button";

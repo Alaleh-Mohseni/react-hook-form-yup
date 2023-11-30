@@ -1,26 +1,32 @@
-import { useCryptoData } from "../hooks/useCryptoData";
+import { useFetchCrypto } from "@hooks/useFetchCrypto";
 import { AiOutlineRise } from "react-icons/ai";
 import { IoMdTrendingDown } from "react-icons/io";
-import { GrRefresh } from "react-icons/gr";
+import { IoIosRefreshCircle } from "react-icons/io";
 
 
 function TopCoins() {
-    const { topCoins, loading, error } = useCryptoData()
+    const { topCoins } = useFetchCrypto()
 
     function showTopCoins() {
 
-        if (loading) {
+        if (topCoins.isLoading) {
             return <p className="m-auto">Loading...</p>
         }
 
-        if (error) {
-            return <GrRefresh
-                className="m-auto text-white"
-                size={'24'}
-            />
+        if (topCoins.error) {
+            return (
+                <div className="flex justify-center space-x-2">
+                    <p className="text-red-500">{topCoins.error.message}</p>
+                    <IoIosRefreshCircle
+                        className="text-red-500"
+                        size={'24'}
+                        onClick={topCoins.refetch}
+                    />
+                </div>
+            )
         }
 
-        return topCoins?.map((item) => {
+        return topCoins.data?.slice(0, 3).map((item) => {
             const cryptoName = item.name
             return (
                 <div key={item.id} className="flex flex-col rounded-xl shadow-md bg-gray-900 w-[260px] h-[150px] p-8 justify-center items-center relative">

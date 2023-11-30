@@ -5,29 +5,29 @@ import { BsBarChart } from "react-icons/bs";
 import { FiClock } from "react-icons/fi";
 import { BiTransfer, BiLogOut, BiHelpCircle } from "react-icons/bi";
 import { motion } from 'framer-motion';
-import avatar from '../assets/images/user.png';
+import avatar from '@assets/images/user.png';
 
 
 const navLinks = [
     {
         title: 'Dashboard',
-        icon: RxDashboard
+        icon: RxDashboard,
     },
     {
         title: 'Activity',
-        icon: FiClock
+        icon: FiClock,
     },
     {
         title: 'Analytics',
-        icon: BsBarChart
+        icon: BsBarChart,
     },
     {
         title: 'Transaction',
-        icon: BiTransfer
+        icon: BiTransfer,
     },
     {
         title: 'Help Center',
-        icon: BiHelpCircle
+        icon: BiHelpCircle,
     },
     {
         title: 'Logout',

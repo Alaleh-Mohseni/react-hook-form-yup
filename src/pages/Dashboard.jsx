@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../contexts/auth-provider';
-import { auth } from '../config/firebase';
-import Sidebar from '../components/Sidebar';
-import TopCoins from '../components/TopCoins';
-import Charts from '../components/Charts';
-import MarketValue from '../components/MarketValue';
+import { AuthContext } from '@contexts/auth-provider';
+import { auth } from '@config/firebase';
+import Sidebar from '@components/Sidebar';
+import TopCoins from '@components/TopCoins';
+import Charts from '@components/Charts';
+import MarketValue from '@components/MarketValue';
 
 
 function Dashboard() {

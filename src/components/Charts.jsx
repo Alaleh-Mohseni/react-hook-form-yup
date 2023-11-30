@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, registerables } from "chart.js";
-import { useChart } from "../hooks/useChart";
+import { useCharts } from "@hooks/useCharts";
 
 ChartJS.register(...registerables);
 
@@ -9,33 +9,29 @@ const btnChart = [
   {
     value: 360,
     title: '1Y',
-    interval: 'yearly'
   },
   {
     value: 180,
     title: '6M',
-    interval: 'monthly'
   },
   {
     value: 30,
     title: '1M',
-    interval: 'monthly'
   },
   {
     value: 7,
     title: '1W',
-    interval: 'daily'
   },
   {
     value: 1,
     title: '1D',
-    interval: 'hourly'
   },
 ]
 
 function Charts() {
-  const { cryptoId, setId, days, dataInChart, id, oneDay, oneMonth, sixMonths, oneWeek, oneYear } = useChart()
+  const { cryptoId, setId, days, dataInChart, id, oneDay, oneMonth, sixMonths, oneWeek, oneYear } = useCharts()
   const [activeBtn, setActiveBtn] = useState(0)
+
 
   function changeTime(value) {
     if (value === 1) {
@@ -70,13 +66,13 @@ function Charts() {
                   key={index}
                   value={item.value}
                   className={`px-3 py-1.5 rounded-md text-xs text-white border border-slate-400 backdrop-blur-md font-semibold lg:mt-2
-              ${(activeBtn === index
+                    ${(activeBtn === index
                       ? 'bg-indigo-500 text-white font-semibold border-none'
                       : ''
                     )}`}
                   onClick={() => {
                     setActiveBtn(index),
-                    changeTime(item.value)
+                      changeTime(item.value)
                   }}
                 >
                   {item.title}
@@ -89,7 +85,7 @@ function Charts() {
                   onChange={(e) => setId(e.target.value)}
                   className="w-full bg-transparent text-transform: capitalize outline-none -mr-2"
                 >
-                  {cryptoId.map(item => (
+                  {cryptoId.data?.map(item => (
                     <option key={item.id} value={item.id} name={item.name} className="text-gray-600">
                       {item.id}
                     </option>
@@ -105,7 +101,7 @@ function Charts() {
                 height={500}
                 datasetIdKey="id"
                 data={{
-                  labels: dataInChart.map((val) => {
+                  labels: dataInChart?.map((val) => {
                     let date = new Date(val.x);
                     let time =
                       date.getHours() > 12
@@ -127,7 +123,7 @@ function Charts() {
                       pointBorderWidth: 3,
                       pointRadius: 2,
                       label: `${id}`,
-                      data: dataInChart.map((val) => val.y),
+                      data: dataInChart?.map((val) => val.y),
                     },
                   ],
                 }}
