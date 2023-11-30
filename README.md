@@ -11,6 +11,7 @@ Currently, two official plugins are available:
 - React
 - React router
 - React hook form
+- React query
 - React icons
 - Firebase
 - Tailwind
@@ -33,10 +34,10 @@ Currently, two official plugins are available:
 ![register-errors](https://github.com/Alaleh-Mohseni/react-hook-form-yup/assets/112727163/79669117-decd-48b8-a68f-ded7e7cd78ff)
 
 
-![dashboard](https://github.com/Alaleh-Mohseni/react-hook-form-yup/assets/112727163/95cf3fb9-8725-43e0-a287-22c1551512e5)
+![Dashboard1](https://github.com/Alaleh-Mohseni/react-hook-form-yup/assets/112727163/bb06f05b-ccba-4e67-bcef-97f4dd7f9cd4)
 
 
-![dashboard2](https://github.com/Alaleh-Mohseni/react-hook-form-yup/assets/112727163/de0ecc84-a8dc-4455-9625-d08338f2517f)
+![Dashboard2](https://github.com/Alaleh-Mohseni/react-hook-form-yup/assets/112727163/0eeb5d6f-b553-4ad7-8ba3-7d0acc720a5b)
 
 
 ![error404](https://github.com/Alaleh-Mohseni/react-hook-form-yup/assets/112727163/fc73478c-31d2-4302-a4e7-a6392d266a28)
